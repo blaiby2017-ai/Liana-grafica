@@ -1,1 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Línea Gráfica — Finance Core</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    /* ── RESET & BASE ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:    #1e3a8a;
+      --blue:    #2563eb;
+      --blue-lt: #3b82f6;
+      --green:   #059669;
+      --green-lt:#10b981;
+      --orange:  #d97706;
+      --orange-lt:#f59e0b;
+      --gray-50: #f8fafc;
+      --gray-100:#f1f5f9;
+      --gray-200:#e2e8f0;
+      --gray-400:#94a3b8;
+      --gray-600:#475569;
+      --gray-800:#1e293b;
+      --white:   #ffffff;
+      --grad-main: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #059669 100%);
+      --grad-blue: linear-gradient(135deg, #2563eb 0%, #1e3a8a 100%);
+      --grad-green:linear-gradient(135deg, #059669 0%, #10b981 100%);
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--gray-50);
+      color: var(--gray-800);
+      line-height: 1.6;
+    }
 
+    /* ── NAV LATERAL ── */
+    .sidenav {
+      position: fixed; top: 0; left: 0;
+      width: 220px; height: 100vh;
+      background: var(--navy);
+      display: flex; flex-direction: column;
+      padding: 2rem 1.25rem;
+      z-index: 100; overflow-y: auto;
+    }
+    .sidenav-logo { margin-bottom: 2rem; }
+    .sidenav-logo img { width: 130px; filter: brightness(0) invert(1); }
+    .sidenav a {
+      display: block; padding: .5rem .75rem;
+      color: rgba(255,255,255,.7);
+      text-decoration: none; font-size: .82rem;
+      font-weight: 500; border-radius: 6px;
+      margin-bottom: .25rem; transition: all .2s;
+      border-left: 3px solid transparent;
+    }
+    .sidenav a:hover, .sidenav a.active {
+      color: #fff; background: rgba(255,255,255,.12);
+      border-left-color: var(--green-lt);
+    }
+    .sidenav-section {
+      font-size: .7rem; font-weight: 700; letter-spacing: 1px;
+      color: rgba(255,255,255,.35); text-transform: uppercase;
+      margin: 1.25rem 0 .5rem .75rem;
+    }
+    .sidenav-footer {
+      margin-top: auto; font-size: .72rem;
+      color: rgba(255,255,255,.3); padding-top: 1rem;
+      border-top: 1px solid rgba(255,255,255,.1);
+    }
+
+    /* ── MAIN ── */
+    main { margin-left: 220px; }
+
+    /* ── SECCIONES ── */
+    section { padding: 5rem 4rem; }
+    section:nth-child(even) { background: var(--white); }
+    .section-label {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: var(--grad-green); color: white;
+      padding: .3rem .9rem; border-radius: 20px;
+      font-size: .78rem; font-weight: 700;
+      letter-spacing: .6px; text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+    h2.section-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.4rem; font-weight: 800;
+      color: var(--navy); line-height: 1.15;
+      margin-bottom: 1rem;
+    }
+    .section-desc {
+      font-size: 1.05rem; color: var(--gray-600);
+      max-width: 640px; margin-bottom: 3rem;
+    }
+    .divider {
+      width: 56px; height: 4px;
+      background: var(--grad-blue);
+      border-radius: 2px; margin-bottom: 1.5rem;
+    }
+
+    /* ── HERO COVER ── */
+    #cover {
+      min-height: 100vh; padding: 0;
+      background: #060d1e;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .cover-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 60% 60% at 20% 20%, rgba(37,99,235,.4) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 50% at 80% 80%, rgba(5,150,105,.3) 0%, transparent 60%);
+    }
+    
